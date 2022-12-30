@@ -29,28 +29,30 @@ function Books() {
 
   return (
     <div>
-    <h2>Kobe Book Store</h2>
+    <h1 style={{marginBottom:100,color:'blueviolet'}}>Book Store: Tokyo</h1>
     {books.length}
     <div className='books'>
     {
         books.map(book=>(
             <div className='book' key={book.id}>
-             {book.cover && <img src={book.cover} alt="" />}
+
+            {book.cover ? <img src={book.cover} alt="" /> : undefined }
              <h3>{book.title}</h3>
-             <h3>Description: {book.desc}</h3>
-             <h2>Price: {book.price}</h2>
+             <p style={{overflow:'scroll', fontSize:12,height:'105px',paddingRight:"11px", paddingLeft:"7px"}}>{book.desc}</p>
+             <p style={{fontSize:10,color:'blue',paddingRight:"5px", paddingLeft:"5px"}}>{book.url}</p>
+             <p>Price:¥ {book.price}</p>
              
              <button  className='delete' onClick = {()=>handleDelete(book.id)}>Delete</button>
-             <br/>
              <button className='update'><Link to={`/update/${book.id}`}>Update</Link></button>
             </div>
         ))
     }
     </div>
-    <button>
+    <button style={{margin:60,backgroundColor:'yellow',color:"white",fontSize:18,textDecoration:"none",padding:"3px 10px"}}>
     <Link to="/add">Add new Book</Link></button>
     </div>
   )
 }
 
 export default Books
+

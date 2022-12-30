@@ -8,7 +8,8 @@ function Add() {
         title:"",
         desc:"",
         price:null,
-        cover:""
+        cover:"",
+        url:""
     })
 
     const navigate = useNavigate()
@@ -39,6 +40,7 @@ function Add() {
        <input type="text" placeholder="desc" onChange={handleChange} name="desc" />
        <input type="number" placeholder="price" onChange={handleChange} name="price" />
        <input type="text" placeholder="cover" onChange={handleChange} name="cover" />
+       <input type="text" placeholder="url" onChange={handleChange} name="url" />
      
        <button className="formButton" onClick={handleClick}>Add Your Book</button>
     </div>
